@@ -1,0 +1,10 @@
+.t-grid-layout {
+  position: relative;
+  transition: height 200ms;
+  background: gray;
+  &-item {
+    background: #ccc;
+    transition: all 200ms ease;
+    box-sizing: border-box;
+  }
+}
