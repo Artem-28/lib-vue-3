@@ -1,5 +1,5 @@
 import { IMap, IRelated, IRelatedIdx } from '@/ui/types/common.type';
-import { onMounted, reactive } from 'vue';
+import { reactive } from 'vue';
 
 export function useRelatedData<T>(resource: T[]) {
     const step = 100;

@@ -34,6 +34,12 @@ export default defineComponent({
             return emptyRenderFn;
         }
 
+        const isVisible = computed<boolean>(() => {
+            const { visibleStartRowIdx, visibleEndRowIdx, virtualScroll } = $grid;
+            if (!virtualScroll.value) return true;
+            return props.y + props.h > visibleStartRowIdx.value && props.y <= visibleEndRowIdx.value;
+        });
+
         const innerX = computed<number>(() => {
             if (props.x + props.w > $grid.colNum.value) return 0;
             return props.x;
@@ -55,8 +61,8 @@ export default defineComponent({
             const colWidth = $grid?.colWidth.value || 0;
             const rowHeight = $grid?.rowHeight.value || 0;
 
-            const gapX = $grid?.gap.value[1] || 0;
-            const gapY = $grid?.gap.value[0] || 0;
+            const gapX = $grid?.gap.value[0] || 0;
+            const gapY = $grid?.gap.value[1] || 0;
 
             const mTop = $grid?.margin.value[0] || 0;
             const mLeft = $grid?.margin.value[3] || 0;
@@ -86,6 +92,7 @@ export default defineComponent({
         }
 
         return () => {
+            if (!isVisible.value) return emptyRenderFn();
             return h('div', {
                 class: 't-grid-layout-item',
                 style: rootStyle.value,

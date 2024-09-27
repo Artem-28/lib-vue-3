@@ -1,9 +1,13 @@
 .t-grid-layout {
   position: relative;
-  transition: height 200ms;
-  background: gray;
+  overflow: auto;
+  height: 500px;
+
+  &__container {
+    position: relative;
+    transition: height 200ms;
+  }
   &-item {
-    background: #ccc;
     transition: all 200ms ease;
     box-sizing: border-box;
   }

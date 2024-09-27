@@ -15,9 +15,9 @@ export const hMergeSlot: HMergeSlot = (slot, source) => {
      return source.concat(slot());
 };
 
-export const hSlot: HSlot = (slot, otherwise) => {
+export const hSlot: HSlot = (slot, otherwise, ...args) => {
     if (!slot) return otherwise || [];
-    return slot();
+    return slot(...args);
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function

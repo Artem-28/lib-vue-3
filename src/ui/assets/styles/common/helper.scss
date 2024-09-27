@@ -1,0 +1,117 @@
+/* Position helpers */
+.t-fixed {
+  position: fixed;
+}
+.t-fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.t-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.t-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.t-absolute {
+  position: absolute;
+}
+.t-absolute-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.t-absolute-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Opacity helpers */
+.t-opacity {
+  &--0 {
+    opacity: 0;
+  }
+  &--10 {
+    opacity: 0.1;
+  }
+  &--20 {
+    opacity: 0.2;
+  }
+  &--30 {
+    opacity: 0.3;
+  }
+  &--40 {
+    opacity: 0.4;
+  }
+  &--50 {
+    opacity: 0.5;
+  }
+  &--60 {
+    opacity: 0.6;
+  }
+  &--70 {
+    opacity: 0.7;
+  }
+  &--80 {
+    opacity: 0.8;
+  }
+  &--90 {
+    opacity: 0.9;
+  }
+  &--100 {
+    opacity: 1;
+  }
+}
+
+.t-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto;
+}
+
+.t-no-pointer-events {
+  pointer-events: none !important;
+}
+
+.t-flex {
+  display: flex;
+}
+
+.t-inline-flex {
+  display: inline-flex;
+}
+
+.t-no-wrap {
+  flex-wrap: nowrap;
+}
+
+.t-items-center {
+  align-items: center;
+}
+
+.t-hide-scrollbar {
+  /* Скрываем scrollbar для Chrome, Safari и Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Скрываем scrollbar для IE, Edge и Firefox */
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -10,9 +10,12 @@ export interface IGridLayoutItem {
 
 export interface IGridLayoutInstance {
     layout: Array<IGridLayoutItem>;
+    virtualScroll: ComputedRef<boolean>;
     rowHeight: ComputedRef<number>;
     margin: ComputedRef<[number, number, number, number]>;
     gap: ComputedRef<[number, number]>;
     colNum: ComputedRef<number>;
     colWidth: ComputedRef<number>;
+    visibleStartRowIdx: ComputedRef<number>;
+    visibleEndRowIdx: ComputedRef<number>;
 }
