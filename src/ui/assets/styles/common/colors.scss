@@ -1,0 +1,65 @@
+.t-color {
+  &--primary {
+    color: $primary;
+  }
+  &--error {
+    color: $error;
+  }
+  &--warning {
+    color: $warning;
+  }
+  &--success {
+    color: $success;
+  }
+  &--dark-primary {
+    color: $dark-primary;
+  }
+  &--dark-secondary {
+    color: $dark-secondary;
+  }
+  &--gray-primary {
+    color: $gray-primary;
+  }
+  &--white-primary {
+    color: $white-primary;
+  }
+  &--white {
+    color: $white;
+  }
+}
+
+.t-bg-color {
+  &--primary {
+    background-color: $primary;
+  }
+  &--error {
+    background-color: $error;
+  }
+  &--warning {
+    background-color: $warning;
+  }
+  &--success {
+    background-color: $success;
+  }
+  &--dark-primary {
+    background-color: $dark-primary;
+  }
+  &--dark-secondary {
+    background-color: $dark-secondary;
+  }
+  &--gray-primary {
+    background-color: $gray-primary;
+  }
+  &--white-primary {
+    background-color: $white-primary;
+  }
+  &--white {
+    background-color: $white;
+  }
+  &--current {
+    background-color: currentColor;
+  }
+  &--inherit {
+    background-color: inherit;
+  }
+}
