@@ -40,7 +40,6 @@
     >
       <template v-slot="{ item }">
         <t-grid-layout-item
-            :key="item.i"
             :w="item.w"
             :h="item.h"
             :y="item.y"
@@ -75,7 +74,7 @@ export default defineComponent({
     const gapX = ref(10);
     const gapY = ref(20);
 
-    const colNum = ref(4);
+    const colNum = ref(3);
     const rowNum = ref(10);
 
     const margin = computed(() => [mTop.value, mRight.value, mBottom.value, mLeft.value]);
@@ -104,40 +103,40 @@ export default defineComponent({
       return result;
     }
 
-    // const layout = reactive([
-    //   { x:0, y:0, w:1, h:1, i:1 },
-    //   { x:1, y:0, w:1, h:1, i:2 },
-    //   { x:2, y:0, w:1, h:1, i:3 },
-    //   { x:3, y:0, w:1, h:1, i:13 },
-    //   { x:0, y:1, w:1, h:1, i:4 },
-    //   { x:1, y:1, w:1, h:1, i:5 },
-    //   { x:2, y:1, w:1, h:1, i:6 },
-    //   { x:3, y:1, w:1, h:1, i:14 },
-    //   { x:0, y:2, w:1, h:1, i:7 },
-    //   { x:1, y:2, w:2, h:2, i:8 },
-    //   // { x:2, y:2, w:1, h:1, i:9 },
-    //   { x:3, y:2, w:1, h:1, i:15 },
-    //   { x:0, y:3, w:1, h:1, i:10 },
-    //   // { x:1, y:3, w:1, h:1, i:11 },
-    //   // { x:2, y:3, w:1, h:1, i:12 },
-    //   { x:3, y:3, w:1, h:1, i:16 },
-    //   { x:0, y:4, w:1, h:1, i:17 },
-    //   { x:1, y:4, w:1, h:1, i:18 },
-    //   { x:2, y:4, w:1, h:1, i:19 },
-    //   { x:3, y:4, w:1, h:1, i:20 },
-    //   { x:0, y:5, w:1, h:1, i:21 },
-    //   { x:1, y:5, w:1, h:1, i:22 },
-    //   { x:2, y:5, w:1, h:1, i:23 },
-    //   { x:3, y:5, w:1, h:1, i:24 },
-    //   { x:0, y:6, w:1, h:1, i:25 },
-    //   { x:1, y:6, w:1, h:1, i:26 },
-    //   { x:2, y:6, w:1, h:1, i:27 },
-    //   { x:3, y:6, w:1, h:1, i:28 },
-    //   { x:0, y:7, w:1, h:1, i:29 },
-    //   { x:1, y:7, w:1, h:1, i:30 },
-    //   { x:2, y:7, w:1, h:1, i:31 },
-    //   { x:3, y:7, w:1, h:1, i:32 },
-    // ]);
+    const layout = reactive([
+      { x:0, y:0, w:1, h:1, i:1 },
+      { x:1, y:0, w:1, h:1, i:2 },
+      { x:2, y:0, w:1, h:1, i:3 },
+      { x:3, y:0, w:1, h:1, i:13 },
+      { x:0, y:1, w:1, h:1, i:4 },
+      { x:1, y:1, w:1, h:1, i:5 },
+      { x:2, y:1, w:1, h:1, i:6 },
+      { x:3, y:1, w:1, h:1, i:14 },
+      { x:0, y:2, w:1, h:1, i:7 },
+      { x:1, y:2, w:2, h:2, i:8 },
+      // { x:2, y:2, w:1, h:1, i:9 },
+      { x:3, y:2, w:1, h:1, i:15 },
+      { x:0, y:3, w:1, h:1, i:10 },
+      // { x:1, y:3, w:1, h:1, i:11 },
+      // { x:2, y:3, w:1, h:1, i:12 },
+      { x:3, y:3, w:1, h:1, i:16 },
+      { x:0, y:4, w:1, h:1, i:17 },
+      { x:1, y:4, w:1, h:1, i:18 },
+      { x:2, y:4, w:1, h:1, i:19 },
+      { x:3, y:4, w:1, h:1, i:20 },
+      { x:0, y:5, w:1, h:1, i:21 },
+      { x:1, y:5, w:1, h:1, i:22 },
+      { x:2, y:5, w:1, h:1, i:23 },
+      { x:3, y:5, w:1, h:1, i:24 },
+      { x:0, y:6, w:1, h:1, i:25 },
+      { x:1, y:6, w:1, h:1, i:26 },
+      { x:2, y:6, w:1, h:1, i:27 },
+      { x:3, y:6, w:1, h:1, i:28 },
+      { x:0, y:7, w:1, h:1, i:29 },
+      { x:1, y:7, w:1, h:1, i:30 },
+      { x:2, y:7, w:1, h:1, i:31 },
+      { x:3, y:7, w:1, h:1, i:32 },
+    ]);
 
     return { layout, margin, mTop, mRight, mBottom, mLeft, gap, gapX, gapY, colNum };
   },
