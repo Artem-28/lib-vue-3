@@ -1,0 +1,1 @@
+export type ToArrayTransformer = <T>(value: T) => T extends any[] ? T : T[]

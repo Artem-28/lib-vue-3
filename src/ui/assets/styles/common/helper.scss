@@ -115,3 +115,22 @@
   -ms-overflow-style: none;  /* IE и Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.t-hidden {
+  display: none !important;
+}
+.t-flex-column {
+  flex-direction: column;
+}
+.t-flex-row {
+  flex-direction: row;
+}
+.t-flex-center {
+  align-items: center;
+}
+.t-flex-reverse.t-flex-row {
+  flex-direction: row-reverse;
+}
+.t-flex-reverse.t-flex-column {
+  flex-direction: column-reverse;
+}
