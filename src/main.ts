@@ -1,4 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import useSprite from '@/ui/components/t-icon/sprite/use-sprite';
 
-createApp(App).mount('#app');
+const app = createApp(App);
+app.use(useSprite);
+
+app.mount('#app');

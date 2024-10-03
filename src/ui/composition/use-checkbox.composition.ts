@@ -3,9 +3,13 @@ import { computed, h, PropType, getCurrentInstance, toRaw, InputHTMLAttributes, 
 import { generateMixinClasses, hMergeSlot, hSlot, stopEndPrevent } from '@/ui/utils';
 import { ColorKey, NodeChild } from '@/ui/types/utils';
 import { useModelUpdate } from '@/ui/composition/use-model.composition';
-import { useFormInject } from '@/ui/composition/use-form';
+import { useFormInject, useFormProps } from '@/ui/composition/use-form.composition';
+import { useSize, useSizeProps } from '@/ui/composition/use-size.composition';
+import { IconKey } from '@/ui/components/t-icon/sprite/use-sprite';
 
 export const useCheckboxProps = {
+    ...useFormProps,
+    ...useSizeProps(24),
     modelValue: {
         required: true,
         default: null,
@@ -17,13 +21,13 @@ export const useCheckboxProps = {
     indeterminateValue: { default: null },
 
     checkedIcon: {
-        type: String,
+        type: String as PropType<IconKey>,
     },
     uncheckedIcon: {
-        type: String,
+        type: String as PropType<IconKey>,
     },
     indeterminateIcon: {
-        type: String,
+        type: String as PropType<IconKey>,
     },
     toggleOrder: {
         type: String as PropType<'tf' | 'ft'>,
@@ -70,6 +74,8 @@ export const useCheckbox: UseCheckbox = (type, getInner) => {
     const vm = getCurrentInstance() as InstanceType<any>;
     const { proxy } = vm;
     const { $props: props, $slots: slots, $emit: emit } = proxy;
+
+    const sizeStyle = useSize(props);
     
     const modelIsArray = computed<boolean>(() => 
         props.val !== void 0 && Array.isArray(props[useModelUpdate.prop]),
@@ -94,25 +100,8 @@ export const useCheckbox: UseCheckbox = (type, getInner) => {
     const isIndeterminate = computed(() => !isTrue.value && !isFalse.value);
     
     const classes = computed(() => {
-        let row = false;
-        let reverse = false;
-        switch (props.labelPosition) {
-            case 'right':
-                row = true;
-                reverse = false;
-                break;
-            case 'left':
-                row = true;
-                reverse = true;
-                break;
-            case 'top':
-                row = false;
-                reverse = true;
-                break;
-            case 'bottom':
-                row = false;
-                reverse = false;
-        }
+        const row = props.labelPosition === 'right' || props.labelPosition === 'left';
+        const reverse = props.labelPosition === 'left' || props.labelPosition === 'top';
         return generateMixinClasses(`t-${type}`, {
             disable: props.disable,
             helpers: {
@@ -212,6 +201,7 @@ export const useCheckbox: UseCheckbox = (type, getInner) => {
         const child = [
             h('div', {
                 class: innerClass.value,
+                style: sizeStyle.value,
             }, inner),
         ];
 

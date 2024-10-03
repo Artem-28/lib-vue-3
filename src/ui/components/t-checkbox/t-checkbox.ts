@@ -2,6 +2,7 @@ import { computed, defineComponent, h } from 'vue';
 import { useCheckbox, useCheckboxEmits, useCheckboxProps } from '@/ui/composition';
 import { useModelUpdate } from '@/ui/composition';
 import { GetInnerCheckbox } from '@/ui/types/composition';
+import TIcon from '@/ui/components/t-icon/TIcon';
 
 
 const bgNode = h('div', {
@@ -39,7 +40,15 @@ export default defineComponent({
                 return props.uncheckedIcon;
             });
             
-            return () => [ bgNode ];
+            return () => {
+                if (!icon.value) return [bgNode];
+                return [
+                    h(TIcon, {
+                        name: icon.value,
+                        size: props.size,
+                    }),
+                ];
+            };
         };
         return useCheckbox('checkbox', getInner);
     },
